@@ -7,6 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 connectToDb();
+app.use(express.static("public/upload"))
 app.get("/", (req, res) => {
   res.send("Api is runnig");
 });
