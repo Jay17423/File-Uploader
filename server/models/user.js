@@ -1,9 +1,22 @@
-import express from 'express'
-import userController from "../controllers/user.js"
+import mongoose from "mongoose";
 
-const router = express.Router();
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+    },
+    email: {
+      type: String,
+    },
+    age: {
+      type: Number,
+    },
+    profile: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-router.post("/users",userController.createUser)
-router.get("/users",userController.getAllUser)
-
-export default  router;
+const userModel = mongoose.model("users",userSchema);
+export default userModel

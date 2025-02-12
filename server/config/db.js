@@ -6,7 +6,7 @@ const connectToDb = async () => {
       "mongodb+srv://jayprakash1200:Jay%4017423@cluster0.w6svg.mongodb.net/fileUploader"
     );
     if (res) {
-      console.log("connect successfully");
+      console.log(" Database connect successfully");
     }
   } catch (error) {
     console.log(error);
